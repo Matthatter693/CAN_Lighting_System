@@ -1,0 +1,22 @@
+# Build output folders
+Rx/Objects/
+Rx/Listings/
+Tx/Objects/
+Tx/Listings/
+
+# Keil generated files
+*.axf
+*.crf
+*.d
+*.o
+*.lst
+*.map
+*.htm
+*.lnp
+*.sct
+*.dep
+
+# User-specific Keil config (optional)
+*.uvopt
+*.uvgui.*
+
