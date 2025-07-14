@@ -16,3 +16,56 @@ The entire code-base here is written in Keil Microvision 5 and the startup code 
 in Keil. 
 
 > **NOTE:** This implementation of Embedded-C code is targetted towards LPC2129 microcontroller. To run in the other it requires some slight modifications so refer your microcontroller datasheet accordingly
+
+## Directory Structure
+### **Rx section**
+```text
+├── Rx
+    ├── Auto_FcArm_Cmd.inp 
+    ├── can1_driver.c       // CAN1 Driver
+    ├── delay.c             // Timer driver for LPC2129
+    ├── header.h            // All header files to be added 
+    ├── main3.c             // Program Body
+    ├── p1.ini              //INI script for Rx side debbugging
+    ├── rx
+    ├── Rxnode.uvproj       // project file for keil
+    ├── Startup.s           //Startup code for LPC2129
+    └── uart0_driver.c      //UART0 driver for LPC2129
+```
+Here is a quick view of the Rx section of the project
+
+The receiver here does the following actions:
+
+- Receive the Data-frames from the ECU and take actions accordingly.
+- Send Error-frame back in-event of errors.
+- Whenever Data-frame is received the interrupt is triggered to take the action.
+
+### **Tx section**
+
+```text
+└── Tx
+    ├── can1_driver.c       //CAN1 Driver LPC2129
+    ├── delay.c             //Timer Driver LPC2129
+    ├── header.h            //Header files
+    ├── interrpt.c          //Driver to handle external interrupts
+    ├── main1.c             //Do not use this.. It's a test main program
+    ├── main2.c             //Main body
+    ├── Startup.s           //Startup code on Tx section
+    ├── Txnode.uvproj       //Keil Project file
+    └── uart0_driver.c      //UART0 driver for LPC2129
+```
+Here is a quick overview of the Tx side of the project
+
+The transmitter node does the following actions:
+
+- Transmit the data-frame when the corresponding external interrupt is triggered.
+- Act as a centralized control-panel for operation.
+- Interfacing ECU's to the user.
+
+## Contact & Queries
+
+For any queries regarding this project contact
+
+Email: [hattermatt44@gmail.com](mailto:your.hattermatt44@gmail.com)   
+LinkedIn: [praveenshanmgam03](https://linkedin.com/in/praveenshanmugam03)
+
