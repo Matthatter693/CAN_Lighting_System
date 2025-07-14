@@ -5,7 +5,7 @@
 
  ## Features
  - The switch controls for the light is implemented internally with external interrupts so achieving a higher response time compared to their polling based condition checks.
- - A full fletched CAN Bus is adhering with CAN 2.0A standard which is simple and efficient for the automotive control works.
+ - A full fledged CAN Bus is adhering with CAN 2.0A standard which is simple and efficient for the automotive control works.
  - The Decentralized setup with seperate ECU's is less prone to failure in times of malfunction.
  - Added UART support for effective debugging of frames in the serial terminal.
  - Drivers written from scratch that runs in a bare-metal setup without heavy dependence on external libraries.
