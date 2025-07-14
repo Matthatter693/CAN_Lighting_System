@@ -19,4 +19,5 @@ Tx/Listings/
 # User-specific Keil config (optional)
 *.uvopt
 *.uvgui.*
+*.scvd
 
