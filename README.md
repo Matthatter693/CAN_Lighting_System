@@ -45,7 +45,6 @@ These are the only frames accepted by the Rx side due to the configuration of th
 ### **Rx section**
 ```text
 ├── Rx
-    ├── Auto_FcArm_Cmd.inp 
     ├── can1_driver.c       // CAN1 Driver
     ├── delay.c             // Timer driver for LPC2129
     ├── header.h            // All header files to be added 
@@ -72,7 +71,6 @@ The receiver here does the following actions:
     ├── delay.c             //Timer Driver LPC2129
     ├── header.h            //Header files
     ├── interrpt.c          //Driver to handle external interrupts
-    ├── main1.c             //Do not use this.. It's a test main program
     ├── main2.c             //Main body
     ├── Startup.s           //Startup code on Tx section
     ├── Txnode.uvproj       //Keil Project file
