@@ -17,6 +17,30 @@ in Keil.
 
 > **NOTE:** This implementation of Embedded-C code is targetted towards LPC2129 microcontroller. To run in the other it requires some slight modifications so refer your microcontroller datasheet accordingly
 
+## Block Diagram
+<div align="center">
+<img src="Demo.png" alt="Project Architecture" width="1000" />
+</div>
+
+Here is the following Data frame details:
+
+**Left Indicator Data Frame:**
+- ID:0x203
+- LI ON DATA:**0x14**
+- LI OFF DATA:**0x15**
+
+**Headlight Data Frame:**
+- ID:**0x201**
+- HL ON DATA:**0x10**
+- HL OFF DATA:**0x11**
+
+**Right Indicator Data Frame:**
+- ID:**0x202**
+- RI ON DATA:**0x12**
+- RI OFF DATA:**0x13**
+
+These are the only frames accepted by the Rx side due to the configuration of the Message Acceptance system in the CAN peripheral. To allow further messages it needs to be modified,
+
 ## Directory Structure
 ### **Rx section**
 ```text
