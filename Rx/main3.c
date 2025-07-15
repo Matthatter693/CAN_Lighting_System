@@ -21,24 +21,32 @@ int main(){
 			flag=0;//for next frame
 			if(r1.rtr==0){
 				uart0_tx_string("data-frame received\r\n");
-//				if(r1.id==0x201)
-//					{
-//				switch(r1.byteA&0xFF)
-//					{
-//				case 0x10://turn ON headlight
-//									uart0_tx_string("HEAD ON\r\n");IOCLR0=LED1;break;
-//				case 0x11://turn OFF headlight	
-//									uart0_tx_string("HEAD OFF\r\n");IOSET0=LED1;break;
-//					}
-//			}
+				if(r1.id==0x201)
+				{
+				switch(r1.byteA&0xFF)
+					{
+				case 0x10://turn ON headlight
+					uart0_tx_string("HEAD ON\r\n");
+					IOCLR0=LED1;
+					break;
+				case 0x11://turn OFF headlight	
+					uart0_tx_string("HEAD OFF\r\n");
+					IOSET0=LED1;
+					break;
+					}
+			}
 			if(r1.id==0x202)
 					{
 				switch(r1.byteA&0xFF)
 					{
 				case 0x12:/*turn ON RI*/
-									uart0_tx_string("RI ON\r\n");rightflag=1;right_blink();break;
+					uart0_tx_string("RI ON\r\n");
+					rightflag=1;
+					right_blink();
+					break;
 				case 0x13:/*turn OFF RI*/	
-									uart0_tx_string("RI OFF\r\n");break;
+					uart0_tx_string("RI OFF\r\n");
+					break;
 					}
 			}
 			if(r1.id==0x203)
@@ -46,9 +54,12 @@ int main(){
 				switch(r1.byteA&0xFF)
 					{
 				case 0x14:/*turn ON LI*/
-									uart0_tx_string("LI ON\r\n");leftflag=1;left_blink();break;
+					uart0_tx_string("LI ON\r\n");
+					leftflag=1;
+					left_blink();
+					break;
 				case 0x15:/*turn OFF LI*/	
-									uart0_tx_string("LI OFF\r\n");break;
+					uart0_tx_string("LI OFF\r\n");break;
 					}
 			}
 		}
